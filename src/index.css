@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colors are RGB triplets so Tailwind opacity (bg-fg/90) works. */
+:root {
+  --bg: 250 250 249;
+  --fg: 24 24 27;
+  --muted: 113 113 122;
+  --card: 255 255 255;
+  --line: 228 228 231;
+  --accent: 37 99 235;
+}
+html[data-theme="dark"] {
+  --bg: 10 10 12;
+  --fg: 244 244 245;
+  --muted: 161 161 170;
+  --card: 20 20 24;
+  --line: 39 39 42;
+  --accent: 96 165 250;
+}
+/* Live mode sets these variables from src/lib/timePalettes.js */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+    overflow-x: clip;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  ::selection {
+    background: rgb(var(--accent) / 0.3);
+  }
+  /* 16px inputs stop iOS Safari from zooming the page when a field is focused */
+  input, textarea {
+    font-size: 16px;
+  }
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* Keeps the bottom bar clear of the iPhone home indicator */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
