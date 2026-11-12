@@ -19,7 +19,7 @@ export default function Skills() {
       <Reveal>
         <h3 className="mb-6 text-xl font-semibold sm:mb-8 sm:text-2xl">What I work with</h3>
       </Reveal>
-      <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {Object.entries(skills).map(([group, items], gi) => {
           const GroupIcon = groupIcons[group] || Code2;
           return (

@@ -43,6 +43,13 @@ html[data-theme="dark"] {
   }
 }
 
+/* Large monitors: Tailwind sizes are rem-based, so growing the root size scales text, spacing and
+   max-widths together. Without this, the site stays a narrow strip on 2K / 4K / ultrawide screens. */
+@media (min-width: 1600px) { html { font-size: 112.5%; } }
+@media (min-width: 1920px) { html { font-size: 125%; } }
+@media (min-width: 2560px) { html { font-size: 150%; } }
+@media (min-width: 3440px) { html { font-size: 175%; } }
+
 /* Keeps the bottom bar clear of the iPhone home indicator */
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);

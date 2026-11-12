@@ -91,7 +91,7 @@ export default function Quotes() {
   const done = phase !== "typing";
 
   return (
-    <section ref={box} aria-label="Words to build by" className="mx-auto max-w-3xl px-5 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20">
+    <section ref={box} aria-label="Words to build by" className="mx-auto max-w-3xl overflow-x-clip px-5 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20">
       <style>{`@keyframes quote-caret{50%{opacity:0}}`}</style>
 
       <div className="relative px-3 py-8 text-center sm:px-12 sm:py-10">

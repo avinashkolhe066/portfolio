@@ -90,7 +90,7 @@ export default function Dock() {
       >
         <div
           ref={barRef}
-          className="relative h-[68px] rounded-full shadow-[0_5px_0_#09090b,0_18px_30px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.09)]"
+          className="relative h-[68px] rounded-full [@media(max-height:480px)]:h-[56px] shadow-[0_5px_0_#09090b,0_18px_30px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.09)]"
           style={{ background: "linear-gradient(180deg,#2c2c30,#1b1b1e)" }}
         >
           {/* tab fill + glowing outline, clipped to the pill shape */}
@@ -138,7 +138,7 @@ export default function Dock() {
                 >
                   <span className="flex h-full flex-col items-center justify-center gap-1">
                     <Icon size={20} strokeWidth={on ? 2.4 : 1.8} className={`transition-colors duration-300 ${on ? "text-accent" : "text-zinc-300"}`} />
-                    <span className={`text-[10px] font-medium leading-none transition-colors duration-300 sm:text-xs ${on ? "text-white" : "text-zinc-400"}`}>{label}</span>
+                    <span className={`text-[10px] font-medium leading-none transition-colors duration-300 max-[359px]:text-[9px] max-[319px]:hidden sm:text-xs [@media(max-height:480px)]:hidden ${on ? "text-white" : "text-zinc-400"}`}>{label}</span>
                   </span>
                   {id === "contact" && !on && (
                     <span className="absolute right-[24%] top-3 h-2 w-2 rounded-full bg-accent" style={{ boxShadow: "0 0 0 2px #1f1f22" }} />
